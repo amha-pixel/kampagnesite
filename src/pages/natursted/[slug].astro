@@ -1,0 +1,47 @@
+---
+import { supabase } from '../../lib/supabase.js';
+
+export async function getStaticPaths() {
+  const { data, error } = await supabase
+    .from('natursteder')
+    .select('slug');
+
+  if (error) {
+    console.log(error);
+    return [];
+  }
+
+  return data.map((natursted) => ({
+    params: { slug: natursted.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+
+const { data, error } = await supabase
+  .from('natursteder')
+  .select('*')
+  .eq('slug', slug)
+  .single();
+---
+
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{data.titel}</title>
+  </head>
+  <body>
+    <h1>{data.titel}</h1>
+    <p>{data.underrubrik}</p>
+    <p>{data.brodtekst}</p>
+    <p>{data.unik_natur}</p>
+    <p>{data.dankort_hjaelper}</p>
+    <p>{data.naturoplevelser}</p>
+    <p>{data.natur_fakta}</p>
+    <p>{data.natur_areal}</p>
+    <p>{data.areal}</p>
+    <p>{data.oekonomi}</p>
+    <p>{data.partnere}</p>
+  </body>
+</html>
