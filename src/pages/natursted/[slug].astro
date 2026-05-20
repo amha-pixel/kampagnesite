@@ -1,10 +1,9 @@
 ---
-import { supabase } from '../../lib/supabase.js';
+import Layout from "../../components/Layout.astro";
+import { supabase } from "../../lib/supabase.js";
 
 export async function getStaticPaths() {
-  const { data, error } = await supabase
-    .from('natursteder')
-    .select('slug');
+  const { data, error } = await supabase.from("natursteder").select("slug");
 
   if (error) {
     console.log(error);
@@ -18,32 +17,21 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params;
 
-const { data, error } = await supabase
-  .from('natursteder')
-  .select('*')
-  .eq('slug', slug)
-  .single();
+const { data, error } = await supabase.from("natursteder").select("*").eq("slug", slug).single();
 ---
 
-<html lang="da">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{data.titel}</title>
-  </head>
-  <body>
-    <h1>{data.titel}</h1>
-    <p>{data.underrubrik}</p>
-    <div class="billede-wrapper">
-      <img src={data.billede} alt={data.titel} />
-    </div>
-    <p>{data.brodtekst}</p>
-    <p>{data.unik_natur}</p>
-    <p>{data.dankort_hjaelper}</p>
-    <p>{data.naturoplevelser}</p>
-    <p>{data.natur_fakta}</p>
-    <p>{data.areal}</p>
-    <p>{data.oekonomi}</p>
-    <p>{data.partnere}</p>
-  </body>
-</html>
+<Layout title={data.titel}>
+  <h1>{data.titel}</h1>
+  <p>{data.underrubrik}</p>
+  <div class="billede-wrapper">
+    <img src={data.billede} alt={data.titel} />
+  </div>
+  <p>{data.brodtekst}</p>
+  <p>{data.unik_natur}</p>
+  <p>{data.dankort_hjaelper}</p>
+  <p>{data.naturoplevelser}</p>
+  <p>{data.natur_fakta}</p>
+  <p>{data.areal}</p>
+  <p>{data.oekonomi}</p>
+  <p>{data.partnere}</p>
+</Layout>
