@@ -34,12 +34,14 @@ const { data, error } = await supabase
   <body>
     <h1>{data.titel}</h1>
     <p>{data.underrubrik}</p>
+    <div class="billede-wrapper">
+      <img src={data.billede} alt={data.titel} />
+    </div>
     <p>{data.brodtekst}</p>
     <p>{data.unik_natur}</p>
     <p>{data.dankort_hjaelper}</p>
     <p>{data.naturoplevelser}</p>
     <p>{data.natur_fakta}</p>
-    <p>{data.natur_areal}</p>
     <p>{data.areal}</p>
     <p>{data.oekonomi}</p>
     <p>{data.partnere}</p>
