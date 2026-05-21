@@ -68,4 +68,17 @@ const { billede, overskrift, underoverskrift, href } = Astro.props;
     color: var(--sort);
     padding-left: 32px;
   }
+
+  @media (min-width: 768px) {
+  .karrusel-sektion {
+    padding: 2rem;
+  }
+
+  .karrusel {
+    overflow-x: visible;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+}
 </style>
