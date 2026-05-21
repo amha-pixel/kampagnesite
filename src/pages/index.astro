@@ -3,6 +3,7 @@ import Layout from "../components/Layout.astro";
 import VaerdiCard from "../components/VaerdiCard.astro";
 import SpoergsmaalSektion from "../components/SpoergsmaalSektion.astro";
 import BestilPopup from "../components/BestilPopup.astro";
+import HvadErSektion from "../components/HvadErSektion.astro";
 ---
 
 <Layout title="Dankort Øremærket">
@@ -20,6 +21,7 @@ import BestilPopup from "../components/BestilPopup.astro";
 
   <SpoergsmaalSektion />
   <BestilPopup />
+  <HvadErSektion />
 
   <section class="karrusel-sektion">
     <div class="karrusel">
@@ -29,9 +31,6 @@ import BestilPopup from "../components/BestilPopup.astro";
       <VaerdiCard billede="/images/natursteder/faellesskab-picnic.webp" overskrift="Øremærket" underoverskrift="og fællesskabet" href="/overblik#faellesskab" />
     </div>
   </section>
-
-
-
 </Layout>
 
 <style>
@@ -109,19 +108,19 @@ import BestilPopup from "../components/BestilPopup.astro";
     display: none;
   }
 
-@media (min-width: 1024px) {
-  .karrusel-sektion {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 2rem;
-  }
+  @media (min-width: 1024px) {
+    .karrusel-sektion {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
 
-  .karrusel {
-    overflow-x: visible;
-    justify-content: center;
-    gap: 1rem;
+    .karrusel {
+      overflow-x: visible;
+      justify-content: center;
+      gap: 1rem;
+    }
   }
-}
 </style>
 
 <script>
