@@ -2,6 +2,7 @@
 ---
 
 <section class="spoergsmaal">
+
   <div class="gul-lag">
     <h2>Har du også brug for økonomisk støtte sidst på måneden?</h2>
     <img src="/images/collage/collage-spray-sort.png" alt="" class="spray" />
@@ -14,26 +15,33 @@
       <p>23-årige Laura valgte at bestille et Dankort i sin bank, så hun undgik at bekymre sig om sin tank-op aftale.</p>
       <p>Nu kan hun bekymringsfrit rejse med offentlig transport – også sidst på måneden.</p>
     </div>
-    <img src="/images/collage/papirstykke-sort.png" alt="" class="papir-sort" />
-    <button class="cta-knap" id="aaben-popup">Sådan bestiller du Dankort</button>
+    <div class="sort-lag">
+      <img src="/images/collage/papirstykke-sort.png" alt="" class="papir-sort" />
+      <button class="cta-knap" id="aaben-popup">Sådan bestiller du Dankort</button>
+    </div>
   </div>
+
 </section>
 
 <style>
   .spoergsmaal {
     position: relative;
-    overflow: hidden;
   }
 
+  /* GUL LAG */
   .gul-lag {
-    background-image: url('/images/collage/papir-gul.png');
-    background-size: cover;
-    background-position: center;
-    padding: 2rem 1rem 4rem;
     position: relative;
+    background-image: url('/images/collage/papir-gul.png');
+    background-size: 90%;
+    background-position: -70px -40px;
+    background-repeat: no-repeat;
+    padding: 2rem 1rem 4rem;
+    overflow: visible;
   }
 
   h2 {
+    position: relative;
+    z-index: 2;
     font-size: 1.6rem;
     font-weight: 800;
     line-height: 1.2;
@@ -42,32 +50,34 @@
 
   .spray {
     position: absolute;
-    bottom: -20px;
+    bottom: -40px;
     right: 0;
     width: 40%;
     z-index: 1;
   }
 
+  /* PAPIR LAG */
   .papir-lag {
     position: relative;
-    padding: 2rem 1rem 1rem;
+    padding: 2rem 1rem 0;
+    z-index: 2;
   }
 
   .papir-hvid {
     position: absolute;
-    top: -30px;
+    top: 15px;
     left: -10px;
-    width: 80%;
+    width: 100%;
     z-index: 0;
-    opacity: 0.9;
   }
 
   .tekst-indhold {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    padding-bottom: 1rem;
   }
 
   .fremhaevet {
@@ -81,13 +91,25 @@
     line-height: 1.6;
   }
 
-  .papir-sort {
-    display: block;
-    width: 100%;
+  /* SORT LAG */
+  .sort-lag {
+    position: relative;
+    z-index: 2;
     margin-top: 1rem;
+    min-height: 80px;
+    padding-bottom: 3rem;
+  }
+  .papir-sort {
+    position: absolute;
+    top: -10px;        /* op/ned */
+    left: -35px;       /* venstre/højre */
+    width: 100%;     /* størrelse */
+    z-index: 1;
   }
 
 .cta-knap {
+    position: relative;
+    z-index: 3;
     display: inline-block;
     background-color: rgba(161, 234, 172, 0.2);
     border: 3px solid var(--limegroen-lys);
@@ -102,32 +124,80 @@
     margin-bottom: 2rem;
   }
 
-  @media (min-width: 768px) {
-    .gul-lag {
-      padding: 3rem 2rem 5rem;
-    }
-
-    h2 {
-      font-size: 2.2rem;
-      max-width: 500px;
-    }
-
-    .papir-lag {
-      padding: 3rem 2rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      align-items: start;
-    }
-
-    .tekst-indhold {
-      grid-column: 1 / 2;
-    }
-
-    .cta-knap {
-      grid-column: 1 / 2;
-    }
+  @media (min-width: 1024px) {
+  .spoergsmaal {
+    max-width: 1200px;
+    margin: 0 auto;
   }
+
+  .gul-lag {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    padding: 3rem 2rem 5rem;
+    background-size: 45%;
+    background-position: -110px -30px;
+    background-repeat: no-repeat;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    max-width: 800px;
+    grid-column: 1 / 2;
+    transform: rotate(-4.91deg);
+  }
+
+  .spray {
+    grid-column: 2 / 3;
+    position: relative;
+    width: 30%;
+    bottom: auto;
+    right: auto;
+  }
+
+.papir-lag {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem 3rem;
+  }
+  
+  .papir-hvid {
+    grid-column: 2 / 3;
+    grid-row: 1;
+    position: relative;
+    width: 100%;
+    z-index: 0;
+    margin-top: -75px;
+    margin-left: 60px;
+  }
+  
+  .tekst-indhold {
+    grid-column: 2 / 3;
+    grid-row: 1;
+    position: relative;
+    z-index: 2;
+    font-size: 1.1rem;
+    align-self: center;
+    padding: 2rem;
+    margin-top: -100px;
+    margin-left: 60px;
+  }
+
+.sort-lag {
+    grid-column: 1 / 2;
+    align-self: start;
+    margin-top: 100px;
+    margin-left: -130px;
+  }
+
+  .fremhaevet {
+  font-size: 1.5rem;
+}
+
+  p {
+    font-size: 1.2rem;
+  }
+}
 </style>
 
 <script>

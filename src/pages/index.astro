@@ -18,6 +18,9 @@ import BestilPopup from "../components/BestilPopup.astro";
     </div>
   </section>
 
+  <SpoergsmaalSektion />
+  <BestilPopup />
+
   <section class="karrusel-sektion">
     <div class="karrusel">
       <VaerdiCard billede="/images/natursteder/natur-rapsmark.webp" overskrift="Øremærket" underoverskrift="og naturen" href="/overblik#natur" />
@@ -27,8 +30,7 @@ import BestilPopup from "../components/BestilPopup.astro";
     </div>
   </section>
 
-  <SpoergsmaalSektion />
-  <BestilPopup />
+
 
 </Layout>
 
@@ -106,6 +108,20 @@ import BestilPopup from "../components/BestilPopup.astro";
   .karrusel::-webkit-scrollbar {
     display: none;
   }
+
+@media (min-width: 1024px) {
+  .karrusel-sektion {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .karrusel {
+    overflow-x: visible;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
 </style>
 
 <script>
