@@ -1,14 +1,10 @@
 ---
-
+import Layout from '../components/Layout.astro';
+import FordeleSektion from '../components/FordeleSektion.astro';
+import KortSektion from '../components/KortSektion.astro';
 ---
 
-<html lang="da">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Dankort Øremærket</title>
-  </head>
-  <body>
-    <h1>Overblik</h1>
-  </body>
-</html>
+<Layout title="Dankort Øremærket – Overblik">
+  <KortSektion />
+  <FordeleSektion />
+</Layout>

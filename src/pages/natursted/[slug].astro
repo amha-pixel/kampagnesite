@@ -34,16 +34,6 @@ const { data, error } = await supabase.from("natursteder").select("*").eq("slug"
       <section class="brodtekst">
         <p>{data.brodtekst}</p>
       </section>
-
-      <section class="accordeon">
-        <Accordeon titel="Unik natur" indhold={data.unik_natur} />
-        <Accordeon titel="Sådan hjælper vi naturen" indhold={data.dankort_hjaelper} />
-        <Accordeon titel="Naturoplevelser" indhold={data.naturoplevelser} />
-      </section>
-
-      <a href="/overblik" class="tilbage-knap">
-        <img src="/images/ui/pil-tilbage.svg" alt="" />
-      </a>
     </div>
 
     <div class="hoejre">
@@ -61,6 +51,17 @@ const { data, error } = await supabase.from("natursteder").select("*").eq("slug"
       </section>
     </div>
 
+    <section class="accordeon">
+      <Accordeon titel="Unik natur" indhold={data.unik_natur} />
+      <Accordeon titel="Sådan hjælper vi naturen" indhold={data.dankort_hjaelper} />
+      <Accordeon titel="Naturoplevelser" indhold={data.naturoplevelser} />
+    </section>
+
+    <a href="/overblik" class="tilbage-knap">
+      <img src="/images/ui/pil-tilbage.svg" alt="" />
+    </a>
+  </div>
+
   </div>
 
 </Layout>
@@ -75,12 +76,12 @@ const { data, error } = await supabase.from("natursteder").select("*").eq("slug"
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: 2.4rem;
     margin-bottom: 0.5rem;
   }
 
   .underrubrik {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 400;
     line-height: 1.4;
   }
@@ -116,7 +117,7 @@ const { data, error } = await supabase.from("natursteder").select("*").eq("slug"
   .fakta {
     background-image: url("/images/collage/papir-fersken.png");
     background-size: 80%;
-    background-position: -120px -40px;
+    background-position: -120px -35px;
     background-repeat: no-repeat;
     padding: 1.5rem 1rem;
     margin-top: 2rem;
@@ -138,6 +139,7 @@ const { data, error } = await supabase.from("natursteder").select("*").eq("slug"
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    align-items: flex-start;
   }
 
   .tilbage-knap {
@@ -157,7 +159,9 @@ const { data, error } = await supabase.from("natursteder").select("*").eq("slug"
 
   @media (min-width: 1024px) {
   .hero {
-    background-image: none;
+    background-image: url("/images/collage/papirstykke-beige.png");
+    background-size: 40%;
+    background-position: -10px -30px;
     padding: 2rem 0 1rem 0;
   }
 
@@ -168,26 +172,44 @@ const { data, error } = await supabase.from("natursteder").select("*").eq("slug"
   .side-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
     gap: 2rem;
     padding: 2rem;
     align-items: start;
   }
 
   .venstre {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    grid-column: 1 / 2;
+    grid-row: 1;
     padding-left: 1rem;
+    padding-top: 2rem;
   }
 
   .hoejre {
+    grid-column: 2 / 3;
+    grid-row: 1 / 4;
     display: flex;
     flex-direction: column;
+  }
+
+  .accordeon {
+    grid-column: 1 / 2;
+    grid-row: 2;
+  }
+
+  .tilbage-knap {
+    grid-column: 1 / 2;
+    grid-row: 3;
   }
 
   .gul-firkant {
     top: 100px;
     right: -53px;
   }
+
+  .fakta {
+  background-size: 45%;
+  background-position: -20px -30px;
+}
 }
 </style>

@@ -4,6 +4,9 @@ import VaerdiCard from "../components/VaerdiCard.astro";
 import SpoergsmaalSektion from "../components/SpoergsmaalSektion.astro";
 import BestilPopup from "../components/BestilPopup.astro";
 import HvadErSektion from "../components/HvadErSektion.astro";
+import SamarbejdsSektion from "../components/SamarbejdsSektion.astro";
+import PartnerskabsSektion from "../components/PartnerskabsSektion.astro";
+import QandASektion from '../components/QandASektion.astro';
 ---
 
 <Layout title="Dankort Øremærket">
@@ -23,6 +26,7 @@ import HvadErSektion from "../components/HvadErSektion.astro";
   <BestilPopup />
   <HvadErSektion />
 
+
   <section class="karrusel-sektion">
     <div class="karrusel">
       <VaerdiCard billede="/images/natursteder/natur-rapsmark.webp" overskrift="Øremærket" underoverskrift="og naturen" href="/overblik#natur" />
@@ -31,6 +35,11 @@ import HvadErSektion from "../components/HvadErSektion.astro";
       <VaerdiCard billede="/images/natursteder/faellesskab-picnic.webp" overskrift="Øremærket" underoverskrift="og fællesskabet" href="/overblik#faellesskab" />
     </div>
   </section>
+
+  <SamarbejdsSektion />
+  <PartnerskabsSektion />
+  <QandASektion />
+
 </Layout>
 
 <style>
