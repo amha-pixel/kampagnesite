@@ -1,6 +1,8 @@
 ---
 import Layout from "../components/Layout.astro";
 import VaerdiCard from "../components/VaerdiCard.astro";
+import SpoergsmaalSektion from "../components/SpoergsmaalSektion.astro";
+import BestilPopup from "../components/BestilPopup.astro";
 ---
 
 <Layout title="Dankort Øremærket">
@@ -24,6 +26,10 @@ import VaerdiCard from "../components/VaerdiCard.astro";
       <VaerdiCard billede="/images/natursteder/faellesskab-picnic.webp" overskrift="Øremærket" underoverskrift="og fællesskabet" href="/overblik#faellesskab" />
     </div>
   </section>
+
+  <SpoergsmaalSektion />
+  <BestilPopup />
+
 </Layout>
 
 <style>
