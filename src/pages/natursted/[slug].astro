@@ -18,52 +18,56 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params;
 
-const { data, error } = await supabase
-  .from("natursteder")
-  .select("*")
-  .eq("slug", slug)
-  .single();
+const { data, error } = await supabase.from("natursteder").select("*").eq("slug", slug).single();
 ---
 
 <Layout title={data.titel}>
 
-  <section class="hero">
-    <h1>{data.titel}</h1>
-    <p class="underrubrik">{data.underrubrik}</p>
-  </section>
+  <div class="side-grid">
 
-  <section class="brodtekst">
-    <p>{data.brodtekst}</p>
-  </section>
+    <div class="venstre">
+      <section class="hero">
+        <h1>{data.titel}</h1>
+        <p class="underrubrik">{data.underrubrik}</p>
+      </section>
 
-  <section class="billede-sektion">
-    <div class="gul-firkant"></div>
-    <img src={data.billede} alt={data.titel} class="naturbillede" />
-  </section>
+      <section class="brodtekst">
+        <p>{data.brodtekst}</p>
+      </section>
 
-  <section class="fakta">
-    <h2>Fakta</h2>
-    <p><strong>Natur</strong><br />{data.natur_fakta}</p>
-    <p><strong>Areal</strong><br />{data.areal}</p>
-    <p><strong>Økonomi</strong><br />{data.oekonomi}</p>
-    <p><strong>Partnere</strong><br />{data.partnere}</p>
-  </section>
+      <section class="accordeon">
+        <Accordeon titel="Unik natur" indhold={data.unik_natur} />
+        <Accordeon titel="Sådan hjælper vi naturen" indhold={data.dankort_hjaelper} />
+        <Accordeon titel="Naturoplevelser" indhold={data.naturoplevelser} />
+      </section>
 
-  <section class="accordeon">
-    <Accordeon titel="Unik natur" indhold={data.unik_natur} />
-    <Accordeon titel="Sådan hjælper vi naturen" indhold={data.dankort_hjaelper} />
-    <Accordeon titel="Naturoplevelser" indhold={data.naturoplevelser} />
-  </section>
+      <a href="/overblik" class="tilbage-knap">
+        <img src="/images/ui/pil-tilbage.svg" alt="" />
+      </a>
+    </div>
 
-  <a href="/overblik" class="tilbage-knap">
-    <img src="/images/ui/pil-tilbage.svg" alt="" />
-  </a>
+    <div class="hoejre">
+      <section class="billede-sektion">
+        <div class="gul-firkant"></div>
+        <img src={data.billede} alt={data.titel} class="naturbillede" />
+      </section>
+
+      <section class="fakta">
+        <h2>Fakta</h2>
+        <p><strong>Natur</strong><br />{data.natur_fakta}</p>
+        <p><strong>Areal</strong><br />{data.areal}</p>
+        <p><strong>Økonomi</strong><br />{data.oekonomi}</p>
+        <p><strong>Partnere</strong><br />{data.partnere}</p>
+      </section>
+    </div>
+
+  </div>
 
 </Layout>
 
 <style>
   .hero {
-    background-image: url('/images/collage/papirstykke-beige.png');
+    background-image: url("/images/collage/papirstykke-beige.png");
     background-size: 80%;
     background-repeat: no-repeat;
     background-position: -80px -20px;
@@ -88,7 +92,7 @@ const { data, error } = await supabase
   .billede-sektion {
     position: relative;
     margin: 0 1rem 2rem;
-    max-width: 90%; 
+    max-width: 90%;
   }
 
   .gul-firkant {
@@ -97,7 +101,7 @@ const { data, error } = await supabase
     right: -30px;
     width: 80%;
     height: 80%;
-    background-color: #FFD998;
+    background-color: #ffd998;
     z-index: 0;
   }
 
@@ -110,7 +114,7 @@ const { data, error } = await supabase
   }
 
   .fakta {
-    background-image: url('/images/collage/papir-fersken.png');
+    background-image: url("/images/collage/papir-fersken.png");
     background-size: 80%;
     background-position: -120px -40px;
     background-repeat: no-repeat;
@@ -150,4 +154,40 @@ const { data, error } = await supabase
   .tilbage-knap img {
     height: 100px;
   }
+
+  @media (min-width: 768px) {
+  .hero {
+    background-image: none;
+    padding: 2rem 0 1rem 0;
+  }
+
+  .brodtekst {
+    padding: 0;
+  }
+
+  .side-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    align-items: start;
+  }
+
+  .venstre {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-left: 1rem;
+  }
+
+  .hoejre {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .gul-firkant {
+    top: 100px;
+    right: -53px;
+  }
+}
 </style>
