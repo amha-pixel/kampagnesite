@@ -1,7 +1,8 @@
 ---
-import '../global.css';
-import Header from './Header.astro';
-import Footer from './Footer.astro';
+import "../global.css";
+import Header from "./Header.astro";
+import Footer from "./Footer.astro";
+import BestilPopup from "./BestilPopup.astro";
 
 const { title } = Astro.props;
 ---
@@ -18,5 +19,6 @@ const { title } = Astro.props;
       <slot />
     </main>
     <Footer />
+    <BestilPopup />
   </body>
 </html>
