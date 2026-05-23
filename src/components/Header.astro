@@ -1,11 +1,16 @@
 ---
+
 ---
 
 <header>
   <a href="/" class="logo">
     <img src="/images/ui/dankort-logo.svg" alt="Dankort logo" />
   </a>
-  <span class="titel">Øremærket</span>
+  <span class="titel"><strong class="dankort-navn">Dankort</strong> Øremærket</span>
+  <nav class="menu" id="menu">
+    <a href="/">Hvad er Dankort Øremærket?</a>
+    <a href="/overblik" class="naturgroen-link">Danmarkskortet</a>
+  </nav>
   <button class="menu-knap" aria-label="Åbn menu" aria-expanded="false">
     <span></span>
     <span></span>
@@ -13,13 +18,9 @@
   </button>
 </header>
 
-<nav class="menu" id="menu">
-  <a href="/">Hvad er Dankort Øremærket?</a>
-  <a href="/overblik">Danmarkskortet</a>
-</nav>
-
 <style>
   header {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -65,6 +66,11 @@
 
   .menu.aaben {
     display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 10;
   }
 
   .menu a {
@@ -78,14 +84,55 @@
   .menu a:last-child {
     border-bottom: none;
   }
+
+  .menu a.naturgroen-link {
+    color: var(--naturgroen);
+  }
+
+  .dankort-navn {
+    font-family: var(--font-body);
+    font-weight: 800;
+  }
+
+  @media (min-width: 1024px) {
+    header {
+      padding: 0.75rem 2rem;
+    }
+
+    .titel {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background-color: transparent;
+      padding: 0;
+      gap: 2rem;
+      position: static;
+    }
+
+    .menu-knap {
+      display: none;
+    }
+
+    .menu a:first-child {
+      display: none;
+    }
+  }
 </style>
 
 <script>
-    const knap = document.querySelector<HTMLButtonElement>('.menu-knap');
-    const menu = document.getElementById('menu');
-  
-    knap?.addEventListener('click', () => {
-      const erAaben = menu?.classList.toggle('aaben');
-      knap.setAttribute('aria-expanded', erAaben ? 'true' : 'false');
-    });
-  </script>
+  const knap = document.querySelector<HTMLButtonElement>(".menu-knap");
+  const menu = document.getElementById("menu");
+
+  knap?.addEventListener("click", () => {
+    const erAaben = menu?.classList.toggle("aaben");
+    knap.setAttribute("aria-expanded", erAaben ? "true" : "false");
+  });
+</script>
