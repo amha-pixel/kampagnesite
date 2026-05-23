@@ -1,21 +1,9 @@
 ---
+
 ---
 
 <footer>
-  <div class="footer-sociale">
-    <h3>Find os på sociale medier</h3>
-    <div class="sociale-medier">
-      <a href="#" aria-label="TikTok">
-        <img src="/images/ui/icon-tiktok.svg" alt="" />
-      </a>
-      <a href="#" aria-label="Instagram">
-        <img src="/images/ui/icon-instagram.svg" alt="" />
-      </a>
-      <a href="#" aria-label="Facebook">
-        <img src="/images/ui/icon-facebook.svg" alt="" />
-      </a>
-    </div>
-  </div>
+  <img src="/images/ui/dankort-logo.svg" alt="Dankort" class="footer-logo" />
 
   <div class="footer-kolonner">
     <div class="footer-kolonne">
@@ -23,7 +11,6 @@
       <a href="#">Om Dankort</a>
       <a href="#">Presse</a>
     </div>
-    <img src="/images/ui/dankort-logo.svg" alt="Dankort" class="footer-logo" />
 
     <div class="footer-kolonne">
       <h3>Support</h3>
@@ -39,6 +26,21 @@
       <a href="#">Cookies</a>
       <a href="#">AEE regulativ</a>
     </div>
+
+    <div class="footer-sociale">
+      <h3>Find os på sociale medier</h3>
+      <div class="sociale-medier">
+        <a href="#" aria-label="TikTok">
+          <img src="/images/ui/icon-tiktok.svg" alt="" />
+        </a>
+        <a href="#" aria-label="Instagram">
+          <img src="/images/ui/icon-instagram.svg" alt="" />
+        </a>
+        <a href="#" aria-label="Facebook">
+          <img src="/images/ui/icon-facebook.svg" alt="" />
+        </a>
+      </div>
+    </div>
   </div>
 </footer>
 
@@ -49,43 +51,22 @@
     margin-top: 2rem;
   }
 
-  .footer-sociale {
-    margin-bottom: 2rem;
-  }
-
-  .footer-sociale h3 {
-    font-size: 1rem;
-    font-weight: 800;
-    margin-bottom: 0.75rem;
-  }
-
-  .sociale-medier {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-  }
-
-  .sociale-medier img {
-    height: 36px;
-    width: 36px;
+  .footer-logo {
+    height: 60px;
+    width: auto;
+    display: block;
+    margin-bottom: 1.5rem;
   }
 
   .footer-kolonner {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    padding-top: 1.5rem;
     position: relative;
   }
 
-  .footer-logo {
-    position: absolute;
-    top: 1.5rem;
-    right: 0;
-    height: 60px;
-  }
-
-  .footer-kolonne h3 {
+  .footer-kolonne h3,
+  .footer-sociale h3 {
     font-size: 1rem;
     font-weight: 800;
     margin-bottom: 0.5rem;
@@ -97,5 +78,45 @@
     text-decoration: none;
     font-size: 0.9rem;
     line-height: 1.8;
+  }
+
+  .sociale-medier {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+
+  .sociale-medier img {
+    height: 36px;
+    width: 36px;
+  }
+
+  @media (min-width: 1024px) {
+    footer {
+      padding: 2rem 3rem;
+    }
+
+    .footer-logo {
+      height: 80px;
+      margin-bottom: 2rem;
+    }
+
+    .footer-kolonner {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .footer-kolonne h3,
+    .footer-sociale h3 {
+      font-size: 1.1rem;
+    }
+
+    .sociale-medier img {
+      height: 40px;
+      width: 40px;
+    }
   }
 </style>
