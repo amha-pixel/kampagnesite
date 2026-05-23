@@ -1,8 +1,8 @@
 ---
+
 ---
 
 <section class="spoergsmaal">
-
   <div class="gul-lag">
     <h2>Har du også brug for økonomisk støtte sidst på måneden?</h2>
     <img src="/images/collage/collage-spray-sort.png" alt="" class="spray" />
@@ -20,20 +20,19 @@
       <button class="cta-knap" id="aaben-popup">Sådan bestiller du Dankort</button>
     </div>
   </div>
-
 </section>
 
 <style>
-    .spoergsmaal {
-  position: relative;
-  padding-bottom: 4rem;
-  margin-top: 3rem;
-}
+  .spoergsmaal {
+    position: relative;
+    padding-bottom: 4rem;
+    margin-top: 3rem;
+  }
 
   /* GUL LAG */
   .gul-lag {
     position: relative;
-    background-image: url('/images/collage/papir-gul.png');
+    background-image: url("/images/collage/papir-gul.png");
     background-size: 90%;
     background-position: -70px -40px;
     background-repeat: no-repeat;
@@ -63,13 +62,14 @@
     position: relative;
     padding: 2rem 1rem 0;
     z-index: 2;
+    overflow: hidden;
   }
 
   .papir-hvid {
     position: absolute;
-    top: 15px;
-    left: -10px;
-    width: 100%;
+    top: 10px;
+    left: -30px;
+    width: calc(100% + 80px);
     z-index: 0;
   }
 
@@ -103,13 +103,13 @@
   }
   .papir-sort {
     position: absolute;
-    top: -10px;        /* op/ned */
-    left: -35px;       /* venstre/højre */
-    width: 100%;     /* størrelse */
+    top: -10px; /* op/ned */
+    left: -35px; /* venstre/højre */
+    width: 100%; /* størrelse */
     z-index: 1;
   }
 
-.cta-knap {
+  .cta-knap {
     position: relative;
     z-index: 3;
     display: inline-block;
@@ -127,84 +127,104 @@
   }
 
   @media (min-width: 1024px) {
-  .spoergsmaal {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+    .spoergsmaal {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-  .gul-lag {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-    padding: 3rem 2rem 5rem;
-    background-size: 45%;
-    background-position: -110px -30px;
-    background-repeat: no-repeat;
-  }
+    .gul-lag {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+      padding: 3rem 2rem 5rem;
+      background-size: 45%;
+      background-position: -110px -30px;
+      background-repeat: no-repeat;
+    }
 
-  h2 {
-    font-size: 2.5rem;
-    max-width: 800px;
-    grid-column: 1 / 2;
-    transform: rotate(-4.91deg);
-  }
+    h2 {
+      font-size: 2.5rem;
+      max-width: 800px;
+      grid-column: 1 / 2;
+      transform: rotate(-4.91deg);
+    }
 
-  .spray {
-    grid-column: 2 / 3;
-    position: relative;
-    width: 30%;
-    bottom: auto;
-    right: auto;
-  }
+    .spray {
+      grid-column: 2 / 3;
+      position: relative;
+      width: 30%;
+      bottom: auto;
+      right: auto;
+    }
 
-.papir-lag {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem 3rem;
-  }
-  
-  .papir-hvid {
-    grid-column: 2 / 3;
-    grid-row: 1;
-    position: relative;
-    width: 100%;
-    z-index: 0;
-    margin-top: -75px;
-    margin-left: 60px;
-  }
-  
-  .tekst-indhold {
-    grid-column: 2 / 3;
-    grid-row: 1;
-    position: relative;
-    z-index: 2;
-    font-size: 1.1rem;
-    align-self: center;
-    padding: 2rem;
-    margin-top: -100px;
-    margin-left: 60px;
-  }
+    .papir-lag {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 0 2rem 3rem;
+      overflow: visible;
+    }
 
-.sort-lag {
-    grid-column: 1 / 2;
-    align-self: start;
-    margin-top: 100px;
-    margin-left: -130px;
-  }
+    .papir-hvid {
+      grid-column: 2 / 3;
+      grid-row: 1;
+      position: relative;
+      width: 130%;
+      z-index: 2;
+      margin-top: -82px;
+      margin-left: 5px;
+    }
 
-  .fremhaevet {
-  font-size: 1.5rem;
-}
+    .tekst-indhold {
+      grid-column: 2 / 3;
+      grid-row: 1;
+      position: relative;
+      z-index: 2;
+      font-size: 1.1rem;
+      align-self: center;
+      padding: 2rem;
+      margin-top: -100px;
+      margin-left: 60px;
+    }
 
-  p {
-    font-size: 1.2rem;
+    .sort-lag {
+      grid-column: 1 / 2;
+      align-self: start;
+      margin-top: 20px;
+      margin-left: -130px;
+      z-index: 1;
+    }
+
+    .papir-sort {
+      width: 90%; /* juster størrelsen */
+    }
+
+    .fremhaevet {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    .cta-knap {
+      position: relative;
+      top: 2rem; /* juster op/ned */
+    }
+
+    .spray {
+      grid-column: 2 / 3;
+      position: relative;
+      width: 25%;
+      bottom: 0;
+      right: 18rem;
+      justify-self: end; /* rykker til højre i grid-cellen */
+    }
   }
-}
 </style>
 
 <script>
-  const aabneKnap = document.getElementById('aaben-popup');
-  aabneKnap?.addEventListener('click', () => {
-    document.getElementById('popup')?.classList.add('aaben');
+  const aabneKnap = document.getElementById("aaben-popup");
+  aabneKnap?.addEventListener("click", () => {
+    document.getElementById("popup")?.classList.add("aaben");
   });
 </script>
