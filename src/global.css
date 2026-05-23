@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;800&family=UnifrakturMaguntia&display=swap');
+
+:root {
+  /* Primære farver */
+  --solsikkegul-mork: #FFD998;
+  --solsikkegul-lys: #FFE8B6;
+
+  /* Sekundære farver */
+  --limegroen-mork: #81D979;
+  --limegroen-lys: #A1EAAC;
+  --dankort-roed: #E21E27;
+  --naturgroen: #6F9C76;
+
+  /* Gråtoner */
+  --sort: #1E1E1E;
+  --moerk-graa: #4A4A4A;
+  --graa: #6A6A6A;
+  --lys-graa: #B4B4B4;
+  --lysere-graa: #D9D9D9;
+  --lysest-graa: #EBEBEB;
+  --hvid: #FFFFFF;
+
+  /* Fonte */
+  --font-body: 'Raleway', sans-serif;
+  --font-display: 'UnifrakturMaguntia', cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--sort);
+  background-color: var(--hvid);
+}
+
+h1, h2, h3 {
+  font-weight: 800;
+}

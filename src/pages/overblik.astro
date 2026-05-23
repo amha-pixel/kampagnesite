@@ -1,14 +1,18 @@
 ---
-
+import Layout from "../components/Layout.astro";
+import KortSektion from "../components/KortSektion.astro";
+import InfoSektion from "../components/InfoSektion.astro";
+import CitatSektion from "../components/CitatSektion.astro";
+import VaerdiFilter from "../components/VaerdiFilter.astro";
+import VaerdiSektion from "../components/VaerdiSektion.astro";
+import FordeleSektion from "../components/FordeleSektion.astro";
 ---
 
-<html lang="da">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Dankort Øremærket</title>
-  </head>
-  <body>
-    <h1>Overblik</h1>
-  </body>
-</html>
+<Layout title="Dankort Øremærket – Overblik">
+  <KortSektion />
+  <InfoSektion />
+  <CitatSektion />
+  <VaerdiFilter />
+  <VaerdiSektion />
+  <FordeleSektion />
+</Layout>
