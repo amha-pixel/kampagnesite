@@ -83,7 +83,7 @@ const vaerdier = [
     font-family: var(--font-body);
     display: grid;
     grid-template-rows: auto auto auto auto;
-    /* Ingen vandret padding her — styres af de indre elementer */
+    overflow: hidden;
   }
 
   /* GUL BLOK */
@@ -115,6 +115,7 @@ const vaerdier = [
     margin-top: -2.5rem;
     margin-left: 1.25rem;
     margin-right: 0; /* Billedet går til kanten til højre */
+    overflow: visible;
   }
 
   .vaerdi-billede {
@@ -127,11 +128,10 @@ const vaerdier = [
   /* Dankort SVG overlay — nederste venstre hjørne på billedet */
   .dankort-overlay {
     position: absolute;
-    bottom: -1.5rem; /* Overlapper lidt ud over billedets kant */
-    left: -1rem;
-    width: 120px;
+    bottom: -3.2rem;
+    left: -2.2rem;
+    width: 200px;
     height: auto;
-    /* Lille rotation for at matche prototypens illustrative stil */
     rotate: -6deg;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
   }
@@ -162,7 +162,7 @@ const vaerdier = [
   .papirstykke {
     display: block;
     width: 450px;
-    margin-top: -3.5rem;
+    margin-top: -4rem;
     position: relative;
     z-index: 1;
   }
@@ -259,12 +259,15 @@ const vaerdier = [
       object-fit: cover;
     }
 
-    .dankort-overlay {
-      width: 160px;
-      bottom: -2rem;
-      left: -2rem;
-      rotate: -8deg;
-    }
+  .dankort-overlay {
+    position: absolute;
+    bottom: -4rem;
+    left: -11rem;
+    width: 450px;
+    height: auto;
+    rotate: -6deg;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  }
 
     .cta-omraade {
       grid-area: cta;
