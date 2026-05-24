@@ -12,7 +12,20 @@ import FordeleSektion from "../components/FordeleSektion.astro";
   <KortSektion />
   <InfoSektion />
   <CitatSektion />
-  <VaerdiFilter />
+  <div style="padding: 0 20px;">
+    <h2>Hvilke værdier har Dankort <span class="display">Øremærket</span> egentlig?</h2>
+    <VaerdiFilter />
+  </div>
   <VaerdiSektion />
   <FordeleSektion />
 </Layout>
+
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const hash = window.location.hash;
+    if (hash) {
+      document.querySelectorAll(".vaerdi-sektion").forEach((s) => s.classList.add("skjult"));
+      document.querySelector(hash)?.classList.remove("skjult");
+    }
+  });
+</script>

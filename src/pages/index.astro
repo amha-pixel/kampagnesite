@@ -6,7 +6,7 @@ import BestilPopup from "../components/BestilPopup.astro";
 import HvadErSektion from "../components/HvadErSektion.astro";
 import SamarbejdsSektion from "../components/SamarbejdsSektion.astro";
 import PartnerskabsSektion from "../components/PartnerskabsSektion.astro";
-import QandASektion from '../components/QandASektion.astro';
+import QandASektion from "../components/QandASektion.astro";
 ---
 
 <Layout title="Dankort Øremærket">
@@ -26,20 +26,18 @@ import QandASektion from '../components/QandASektion.astro';
   <BestilPopup />
   <HvadErSektion />
 
-
   <section class="karrusel-sektion">
     <div class="karrusel">
       <VaerdiCard billede="/images/natursteder/natur-rapsmark.webp" overskrift="Øremærket" underoverskrift="og naturen" href="/overblik#natur" />
-      <VaerdiCard billede="/images/natursteder/lokalmiljoe-landsby.webp" overskrift="Øremærket" underoverskrift="og lokalmiljøet" href="/overblik#lokalmiljoe" />
-      <VaerdiCard billede="/images/natursteder/faellesskab-badebro.webp" overskrift="Øremærket" underoverskrift="og det sociale" href="/overblik#sociale" />
-      <VaerdiCard billede="/images/natursteder/faellesskab-picnic.webp" overskrift="Øremærket" underoverskrift="og fællesskabet" href="/overblik#faellesskab" />
+      <VaerdiCard billede="/images/natursteder/lokalmiljoe-landsby.webp" overskrift="Øremærket" underoverskrift="og lokalmiljøet" href="/overblik#lokalt" />
+      <VaerdiCard billede="/images/natursteder/faellesskab-badebro.webp" overskrift="Øremærket" underoverskrift="og det sociale" href="/overblik#socialt" />
+      <VaerdiCard billede="/images/natursteder/faellesskab-picnic.webp" overskrift="Øremærket" underoverskrift="og fællesskabet" href="/overblik#faelles" />
     </div>
   </section>
 
   <SamarbejdsSektion />
   <PartnerskabsSektion />
   <QandASektion />
-
 </Layout>
 
 <style>
