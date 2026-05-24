@@ -1,28 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;800&family=UnifrakturMaguntia&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;800&family=UnifrakturMaguntia&display=swap");
 
 :root {
   /* Primære farver */
-  --solsikkegul-mork: #FFD998;
-  --solsikkegul-lys: #FFE8B6;
+  --solsikkegul-mork: #ffd998;
+  --solsikkegul-lys: #ffe8b6;
 
   /* Sekundære farver */
-  --limegroen-mork: #81D979;
-  --limegroen-lys: #A1EAAC;
-  --dankort-roed: #E21E27;
-  --naturgroen: #6F9C76;
+  --limegroen-mork: #81d979;
+  --limegroen-lys: #a1eaac;
+  --dankort-roed: #e21e27;
+  --naturgroen: #6f9c76;
 
   /* Gråtoner */
-  --sort: #1E1E1E;
-  --moerk-graa: #4A4A4A;
-  --graa: #6A6A6A;
-  --lys-graa: #B4B4B4;
-  --lysere-graa: #D9D9D9;
-  --lysest-graa: #EBEBEB;
-  --hvid: #FFFFFF;
+  --sort: #1e1e1e;
+  --moerk-graa: #4a4a4a;
+  --graa: #6a6a6a;
+  --lys-graa: #b4b4b4;
+  --lysere-graa: #d9d9d9;
+  --lysest-graa: #ebebeb;
+  --hvid: #ffffff;
 
   /* Fonte */
-  --font-body: 'Raleway', sans-serif;
-  --font-display: 'UnifrakturMaguntia', cursive;
+  --font-body: "Raleway", sans-serif;
+  --font-display: "UnifrakturMaguntia", cursive;
+}
+
+span.display {
+  font-family: "UnifrakturMaguntia", cursive;
 }
 
 * {
@@ -37,6 +41,12 @@ body {
   background-color: var(--hvid);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: 800;
+}
+
+h2 {
+  font-size: 35.2px;
 }
